@@ -1,0 +1,44 @@
+html{
+    font-family: 'roboto', sans-serif;
+}
+.qualquercoisa{
+    background-color: blue !important;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    width: 650px;
+    padding: 0;
+}
+
+
+ul li{
+    position: relative;
+    color: grey;
+    width: 25%;
+    text-align: center;
+}
+
+ul li::before{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    content: attr(data-step);
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: var(--light-grey);
+    color: #9FABAE;
+
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 20px);
+    z-index: 99;
+
+}
