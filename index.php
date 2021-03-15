@@ -163,8 +163,19 @@
                         </div>
                     </div>
                     <!-- FOMULARIO 3 -->
+                    <div id="alertCurso" class="z-50 bg-red-300 border-t-4 border-red-700 rounded-b text-red-700 px-4 py-3 shadow-md my-2 w-1/4 absolute ml-4 left-0" role="alert" style="display: none;">
+                        <div class="flex">
+                            <svg class="h-6 w-6 mr-4 mt-2" fill="currentColor" viewBox="0 0 20 20" class="h-6 w-6">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-bold">Erro</p>
+                                <p class="text-sm"> Informe ao menos um curso</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 hidden" id="form-3">
-                        <div class="-mx-3 md:flex mb-6" id="div_oab">
+                        <div class="-mx-3 md:flex mb-6 hidden" id="div_oab">
                             <div class="w-1/2 px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="ano-formacao">
                                     OAB
@@ -292,9 +303,14 @@
                                     <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
                                 </svg></button>
                         </div>
+                        <div>
+                            <label for="image-input" class="flex text-center w-1/2 px-4 my-2">Envie seu curriculo:</label>
+                            <input id="image-input" name="image-input" type="file" value="Envie seu curriculo" class="mb-4 border-none">
+
+                        </div>
                         <div class="w-full flex items-end justify-between">
                             <button class="border-2 rounded border-red-600 bg-red-600 text-white py-2 px-4 mt-2 w-28 right-0 hover:bg-red-800" id="btn-2" onclick="backTwo()">Anterior</button>
-                            <button class="border-2 rounded border-green-600 bg-green-600 text-white py-2 px-4 mt-2 w-28 right-0 hover:bg-green-800 animate-bounce">Finalizar</button>
+                            <button class="border-2 rounded border-green-600 bg-green-600 text-white py-2 px-4 mt-2 w-28 right-0 hover:bg-green-800 animate-bounce" onclick="sendForm()">Finalizar</button>
                         </div>
                     </div>
                 </div>
@@ -307,6 +323,7 @@
 </body>
 <script>
     $("#cep").mask("00.000-000");
+
 
     function backOne() {
         document.getElementById("form-1").classList.remove("hidden");
@@ -337,12 +354,30 @@
     }
 
     function nextThree() {
-        document.getElementById("form-3").classList.remove("hidden");
-        document.getElementById("form-2").classList.add("hidden");
-        document.getElementById("prog-bar-3").style.width = "100%";
-        document.getElementById("prog-dot-3").className = "w-10 h-10 mx-auto bg-green-500 rounded-full text-lg text-white flex items-center";
-        document.getElementById("prog-txt-3").className = "text-center text-white w-full";
+        if (document.getElementById("area").value == "" || document.getElementById("cargo").value == "" || document.getElementById("cep").value == "") { 
+            showFailMessage();
+        } else {            
+            if (document.getElementById("area").value == 1) {
+                document.getElementById("div_oab").classList.remove("hidden");
+            }
+            document.getElementById("form-3").classList.remove("hidden");
+            document.getElementById("form-2").classList.add("hidden");
+            document.getElementById("prog-bar-3").style.width = "100%";
+            document.getElementById("prog-dot-3").className = "w-10 h-10 mx-auto bg-green-500 rounded-full text-lg text-white flex items-center";
+            document.getElementById("prog-txt-3").className = "text-center text-white w-full";
+        }
+
     }
+
+    function sendForm() {
+        if (document.getElementById("academy-faculdade1").value == "" || document.getElementById("academy-curso1").value == "" || document.getElementById("academy-ano-inicio1").value == "" || document.getElementById("academy-nivel1").value == "") { //Verifica se a formação academica esta preenchido
+            showFailMessageCurso();
+        } else {
+
+        }
+
+    }
+
 
     function searchCep(cep) {
         let obj = cep.value.replace('.', '');;
@@ -363,6 +398,8 @@
 
     var identIdAcademy = 2;
     var identIdExperience = 2;
+
+    document.getElementById("image-input").addEventListener("change", readFile);
 
     $("#addAcademy").on("click", () => {
         $("#formacao_academica").html($("#formacao_academica").html() + getTemplateAcademy(identIdAcademy));
@@ -389,6 +426,11 @@
     function showFailMessage() {
         $("#alert").show();
         $("#alert").delay(4000).hide();
+    }
+
+    function showFailMessageCurso() {
+        $("#alertCurso").show();
+        $("#alertCurso").delay(4000).hide();
     }
 
 
