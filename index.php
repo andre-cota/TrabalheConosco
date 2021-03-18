@@ -38,12 +38,12 @@
                 </div>
             </div>
         </div>
-        <div class="shadow-lg rounded-lg w-3/4 bg-white min-h-screen">
+        <div class="w-full shadow-lg rounded-lg sm:w-3/4 bg-white min-h-screen">
             <div class="mt-20 text-center ">
                 <h1 class="text-4xl">TRABALHE CONOSCO</h1>
             </div>
             <div class="my-10" id="progress">
-                <div class="mx-20 mt-3 sm:mt-0 sm:ml4">
+                <div class="mx-6 sm:mx-20 mt-3 sm:mt-0 sm:ml4">
                     <div class="w-full py-6">
                         <div class="flex">
                             <div class="w-1/3">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <!-- FOMULARIO 1 -->
-                    <div class="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2" id="form-1">
+                    <div class="bg-white rounded sm:px-8 pt-6 pb-8 mb-4 flex flex-col my-2" id="form-1">
                         <div class="-mx-3 md:flex mb-6">
                             <div class="w-full px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="nome-completo">
@@ -116,13 +116,13 @@
                         </div>
                     </div>
                     <!-- FOMULARIO 2 -->
-                    <div class="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 hidden" id="form-2">
+                    <div class="bg-white rounded sm:px-8 pt-6 pb-8 mb-4 flex flex-col my-2 hidden" id="form-2">
                         <div class="-mx-3 md:flex mb-6">
                             <div class="w-full px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="area">
                                     Área
                                 </label>
-                                <select class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="area">
+                                <select class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="area" onchange="isLawyer()">
                                     <option value="">Selecione Área</option>
                                     <option value="1">Juridico</option>
                                     <option value="2">Tecnologia</option>
@@ -174,34 +174,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 hidden" id="form-3">
-                        <div class="-mx-3 md:flex mb-6 hidden" id="div_oab">
-                            <div class="w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="bg-white rounded sm:px-8 pt-6 pb-8 mb-4 flex flex-col my-2 hidden" id="form-3">
+                        <div class="-mx-3 md:flex mb-6 hidden" id="divOab">
+                            <div class="sm:w-1/2 px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="ano-formacao">
                                     OAB
                                 </label>
                                 <input type="number" min="1" max="10" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="oab_number" placeholder="123456">
                             </div>
-                            <div class="w-1/2 -mx-3 md:flex ml-4 hidden" id="div-oab">
+                            <div class="sm:w-1/2 -mx-3 md:flex ml-4 hidden" id="div-oab">
                                 <label class="inline-flex items-center">
-                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span class="ml-2 text-gray-700"> Não Possuo OAB</span>
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600" id="noOAB"><span class="ml-2 text-gray-700"> Não Possuo OAB</span>
                                 </label>
                             </div>
                         </div>
-                        <div class="border p-8 rounded">
+                        <div class="sm:border p-2 sm:p-8 rounded">
                             <div class="-mx-3 md:flex mb-6">
                                 <h2 class="underline font-bold">Formacao Academica</h2>
                             </div>
                             <div id="formacao_academica">
                                 <div class="bg-gray-100 p-4 rounded-lg mb-4">
                                     <div class="-mx-3 md:flex mb-6 ">
-                                        <div class="w-full px-3 mb-6 md:mb-0">
+                                        <div class="w-full sm:w-1/2 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-faculdade1">
                                                 Instituição
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="academy-faculdade1" type="text" placeholder="Instituto/Centro Educacional/Universidade">
                                         </div>
-                                        <div class="w-full px-3 mb-6 md:mb-0">
+                                        <div class="w-full sm:w-1/2 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-curso1">
                                                 Curso
                                             </label>
@@ -209,13 +209,7 @@
                                         </div>
                                     </div>
                                     <div class="-mx-3 md:flex mb-6 ">
-                                        <div class="w-1/2 px-3 mb-6 md:mb-0">
-                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-ano-inicio1">
-                                                Ano de inicio
-                                            </label>
-                                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="academy-ano-inicio1" type="date">
-                                        </div>
-                                        <div class="w-1/2 px-3 mb-6 md:mb-0" id="div-periodo">
+                                        <div class="w-full sm:w-1/2 px-3 mb-6 md:mb-0" id="div-periodo">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-nivel1">
                                                 Nível
                                             </label>
@@ -229,19 +223,11 @@
                                                 <option value="6">Doutorado</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="-mx-3 md:flex mb-6">
-
-                                        <div class="w-1/2 px-3 mb-6 md:mb-0">
+                                        <div class="w-full sm:w-1/2 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="ano-formacao1">
                                                 Ano de formação
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="ano-formacao1" type="date">
-                                        </div>
-                                        <div class="w-1/2 -mx-3 md:flex ml-4 hidden" id="div-oab">
-                                            <label class="inline-flex items-center">
-                                                <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span class="ml-2 text-gray-700">Cursando</span>
-                                            </label>
                                         </div>
                                     </div>
                                 </div>
@@ -250,7 +236,8 @@
                                     <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
                                 </svg></button>
                         </div>
-                        <div class="border p-8 my-4 rounded">
+                        <hr class="mt-4 sm:hidden">
+                        <div class="sm:border p-2 sm:p-8 my-4 rounded">
                             <div class="-mx-3 md:flex mb-6">
                                 <h2 class="underline font-bold">Experiência</h2>
                             </div>
@@ -279,19 +266,19 @@
                                         </div>
                                     </div>
                                     <div class="-mx-3 md:flex mb-6">
-                                        <div class="w-1/2 px-3 mb-6 md:mb-0">
+                                        <div class="sm:w-1/2 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="exp-ano-inicio1">
                                                 Ano de inicio
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="ano-inicio1" type="date">
                                         </div>
-                                        <div class="w-1/2 px-3 mb-6 md:mb-0">
+                                        <div class="sm:w-1/2 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="exp-ano-saida1">
                                                 Ano de saida
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="exp-ano-saida1" type="date">
                                         </div>
-                                        <div class="w-1/2 -mx-3 md:flex ml-4 hidden" id="div-oab">
+                                        <div class="sm:w-1/2 -mx-3 md:flex ml-4 hidden" id="div-oab">
                                             <label class="inline-flex items-center">
                                                 <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span class="ml-2 text-gray-700">Trabalho Atual</span>
                                             </label>
@@ -304,8 +291,8 @@
                                 </svg></button>
                         </div>
                         <div>
-                            <label for="image-input" class="flex text-center w-1/2 px-4 my-2">Envie seu curriculo:</label>
-                            <input id="image-input" name="image-input" type="file" value="Envie seu curriculo" class="mb-4 border-none">
+                            <label for="image-input" class="flex text-center sm:w-1/2 px-4 my-2">Envie seu curriculo:</label>
+                            <input id="image-input" name="image-input" type="file" value="Envie seu curriculo" class="mb-4 w-full border-none">
 
                         </div>
                         <div class="w-full flex items-end justify-between">
@@ -322,7 +309,7 @@
     </div>
 </body>
 <script>
-    $("#cep").mask("00.000-000");
+    //$("#cep").mask("00.000-000");
 
 
     function backOne() {
@@ -354,12 +341,9 @@
     }
 
     function nextThree() {
-        if (document.getElementById("area").value == "" || document.getElementById("cargo").value == "" || document.getElementById("cep").value == "") { 
+        if (document.getElementById("area").value == "" || document.getElementById("cargo").value == "" || document.getElementById("cep").value == "") {
             showFailMessage();
-        } else {            
-            if (document.getElementById("area").value == 1) {
-                document.getElementById("div_oab").classList.remove("hidden");
-            }
+        } else {
             document.getElementById("form-3").classList.remove("hidden");
             document.getElementById("form-2").classList.add("hidden");
             document.getElementById("prog-bar-3").style.width = "100%";
@@ -379,6 +363,10 @@
     }
 
 
+    function isLawyer() {
+        document.getElementById("area").value == 1 ? $("#divOab").show() : $("#divOab").hide();
+    }
+
     function searchCep(cep) {
         let obj = cep.value.replace('.', '');;
         obj = obj.replace('-', '');;
@@ -396,18 +384,26 @@
         document.getElementById("cidade").value = json.localidade;
     }
 
+    //OAB Validation
+    $('#noOAB').on("change", () => {
+        $('#noOAB').prop('checked') == true ? $('#oab_number').attr('disabled', true) : $('#oab_number').attr('disabled', false);
+    });
+
+    $('#noOAB').on("change", () => {
+        $('#noOAB').prop('checked') == true ? $('#oab_number').attr('disabled', true) : $('#oab_number').attr('disabled', false);
+    });
+
     var identIdAcademy = 2;
     var identIdExperience = 2;
 
-    document.getElementById("image-input").addEventListener("change", readFile);
 
     $("#addAcademy").on("click", () => {
-        $("#formacao_academica").html($("#formacao_academica").html() + getTemplateAcademy(identIdAcademy));
+        $("#formacao_academica").append(getTemplateAcademy(identIdAcademy));
         identIdAcademy++;
     })
 
     $("#addExperience").on("click", () => {
-        $("#experience").html($("#experience").html() + getTemplateExperience(identIdExperience));
+        $("#experience").append(getTemplateExperience(identIdExperience));
         identIdExperience++;
     })
 
@@ -437,59 +433,52 @@
 
 
     function getTemplateAcademy(id) {
-        return `<div class="bg-gray-100 p-4 rounded-lg mb-4" id="academy` + id + `">
-                                <div class="-mx-3 md:flex mb-6 ">
-                                    <div class="w-full px-3 mb-6 md:mb-0">
-                                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-faculdade` + id + `">
-                                            Instituição
-                                        </label>
-                                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="academy-faculdade` + id + `" type="text" placeholder="Instituto/Centro Educacional/Universidade">
+        return `
+        <div id="academy` + id + `">
+                                <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                                    
+                                    <div class="-mx-3 md:flex mb-6 ">
+                                        <div class="sm:w-1/2 px-3 mb-6 md:mb-0">
+                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-faculdade` + id + `">
+                                                Instituição
+                                            </label>
+                                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="academy-faculdade` + id + `" type="text" placeholder="Instituto/Centro Educacional/Universidade">
+                                        </div>
+                                        <div class="sm:w-1/2 px-3 mb-6 md:mb-0">
+                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-curso` + id + `">
+                                                Curso
+                                            </label>
+                                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="academy-curso` + id + `" type="text" placeholder="Exp.: Direito">
+                                        </div>
                                     </div>
-                                    <div class="w-full px-3 mb-6 md:mb-0">
-                                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-curso` + id + `">
-                                            Curso
-                                        </label>
-                                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="academy-curso` + id + `" type="text" placeholder="Exp.: Direito">
-                                    </div>
-                                </div>
-                                <div class="-mx-3 md:flex mb-6 ">
-                                    <div class="w-1/2 px-3 mb-6 md:mb-0">
-                                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-ano-inicio` + id + `">
-                                            Ano de Inicio
-                                        </label>
-                                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="academy-ano-inicio` + id + `" type="date">
-                                    </div>
-                                    <div class="w-1/2 px-3 mb-6 md:mb-0" id="div-periodo">
-                                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-nivel` + id + `">
-                                            Nível
-                                        </label>
-                                        <select type="number" min="1" max="10" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="academy-nivel` + id + `">
-                                            <option value="0">Selecione o nivel</option>
-                                            <option value="1">Tecnico</option>
-                                            <option value="2">Tecnólogo</option>
-                                            <option value="3">Bacharelado</option>
-                                            <option value="4">Licenciatura</option>
-                                            <option value="5">Mestrado</option>
-                                            <option value="6">Doutorado</option>
-                                        </select>
-                                    </div>
-                                    <div class="-mx-3 md:flex mb-6">
-
-                                        <div class="w-1/2 px-3 mb-6 md:mb-0">
-                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-ano-formacao` + id + `">
+                                    <div class="-mx-3 md:flex mb-6 ">
+                                        <div class="sm:w-1/2 px-3 mb-6 md:mb-0" id="div-periodo">
+                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="academy-nivel` + id + `">
+                                                Nível
+                                            </label>
+                                            <select type="number" min="1" max="10" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="academy-nivel` + id + `">
+                                                <option value="0">Selecione o nivel</option>
+                                                <option value="1">Tecnico</option>
+                                                <option value="2">Tecnólogo</option>
+                                                <option value="3">Bacharelado</option>
+                                                <option value="4">Licenciatura</option>
+                                                <option value="5">Mestrado</option>
+                                                <option value="6">Doutorado</option>
+                                            </select>
+                                        </div>
+                                        <div class="sm:w-1/2 px-3 mb-6 md:mb-0">
+                                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="ano-formacao` + id + `">
                                                 Ano de formação
                                             </label>
-                                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="academy-ano-formacao` + id + `" type="date">
-                                        </div>
-                                        <div class="w-1/2 -mx-3 md:flex ml-4 hidden" id="div-oab">
-                                            <label class="inline-flex items-center">
-                                                <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span class="ml-2 text-gray-700">Cursando</span>
-                                            </label>
+                                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="ano-formacao` + id + `" type="date">
                                         </div>
                                     </div>
+                                    <div class="flex flex-row-reverse px-2">
+                                        <button class="border-2 rounded border-red-600 bg-red-600 text-white py-1 px-1 hover:bg-red-800" id="btnTrash" onclick="removeAcademy(` + id + `)"><svg version="1.1" id="Camada_1" class="h-5 w-5"focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve"><path d="M440.4,114.3L334.7,78.9l-3-18.6c-1.3-8.1-7.1-14.9-15.2-17.6L216,8.9c-8-2.7-16.8-0.8-22.6,4.9l-13.6,13L74.1-8.6	C66.4-11.2,58-7.2,55.5,0.3l-9.1,27.1C43.9,34.8,48.2,43,56,45.6l366.2,122.8c7.8,2.6,16.1-1.3,18.6-8.8l9.1-27.1	C452.4,125.1,448.2,116.9,440.4,114.3z M65.4,471.8c1.5,22.6,20.9,40.2,44.5,40.2h228.2c23.5,0,43-17.6,44.5-40.2l19.7-302.6H45.7 L65.4,471.8z"/></svg></button>
+                                    </div>
                                 </div>
-                                <button class="border-2 rounded border-red-600 bg-red-600 text-white py-1 px-1 hover:bg-red-800" id="btnTrash" onclick="removeAcademy(` + id + `)"><svg version="1.1" id="Camada_1" class="h-5 w-5"focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve"><path d="M440.4,114.3L334.7,78.9l-3-18.6c-1.3-8.1-7.1-14.9-15.2-17.6L216,8.9c-8-2.7-16.8-0.8-22.6,4.9l-13.6,13L74.1-8.6	C66.4-11.2,58-7.2,55.5,0.3l-9.1,27.1C43.9,34.8,48.2,43,56,45.6l366.2,122.8c7.8,2.6,16.1-1.3,18.6-8.8l9.1-27.1	C452.4,125.1,448.2,116.9,440.4,114.3z M65.4,471.8c1.5,22.6,20.9,40.2,44.5,40.2h228.2c23.5,0,43-17.6,44.5-40.2l19.7-302.6H45.7 L65.4,471.8z"/></svg></button>
-                                </div>`;
+                                
+        </div>`;
     }
 
     function getTemplateExperience(id) {
@@ -517,33 +506,35 @@
                                         </div>
                                     </div>
                                     <div class="-mx-3 md:flex mb-6">
-                                        <div class="w-1/2 px-3 mb-6 md:mb-0">
+                                        <div class="sm:w-1/2 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="exp-ano-inicio` + id + `">
                                                 Ano de inicio
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="ano-inicio` + id + `" type="date">
                                         </div>
-                                        <div class="w-1/2 px-3 mb-6 md:mb-0">
+                                        <div class="sm:w-1/2 px-3 mb-6 md:mb-0">
                                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="exp-ano-saida` + id + `">
                                                 Ano de saida
                                             </label>
                                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="exp-ano-saida` + id + `" type="date">
                                         </div>
-                                        <div class="w-1/2 -mx-3 md:flex ml-4 hidden" id="div-oab">
+                                        <div class="sm:w-1/2 -mx-3 md:flex ml-4 hidden" id="div-oab">
                                             <label class="inline-flex items-center">
                                                 <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span class="ml-2 text-gray-700">Trabalho Atual</span>
                                             </label>
                                         </div>
                                     </div>
-                                    <button class="border-2 rounded border-red-600 bg-red-600 text-white py-1 px-1 hover:bg-red-800" id="btnTrash" onclick="removeExperience(` + id + `)"><svg version="1.1" id="Camada_1" class="h-5 w-5"focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve"><path d="M440.4,114.3L334.7,78.9l-3-18.6c-1.3-8.1-7.1-14.9-15.2-17.6L216,8.9c-8-2.7-16.8-0.8-22.6,4.9l-13.6,13L74.1-8.6	C66.4-11.2,58-7.2,55.5,0.3l-9.1,27.1C43.9,34.8,48.2,43,56,45.6l366.2,122.8c7.8,2.6,16.1-1.3,18.6-8.8l9.1-27.1	C452.4,125.1,448.2,116.9,440.4,114.3z M65.4,471.8c1.5,22.6,20.9,40.2,44.5,40.2h228.2c23.5,0,43-17.6,44.5-40.2l19.7-302.6H45.7 L65.4,471.8z"/></svg></button>
+                                    <div class="flex flex-row-reverse px-2">
+                                        <button class="border-2 rounded border-red-600 bg-red-600 text-white py-1 px-1 hover:bg-red-800" id="btnTrash" onclick="removeExperience(` + id + `)"><svg version="1.1" id="Camada_1" class="h-5 w-5"focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve"><path d="M440.4,114.3L334.7,78.9l-3-18.6c-1.3-8.1-7.1-14.9-15.2-17.6L216,8.9c-8-2.7-16.8-0.8-22.6,4.9l-13.6,13L74.1-8.6	C66.4-11.2,58-7.2,55.5,0.3l-9.1,27.1C43.9,34.8,48.2,43,56,45.6l366.2,122.8c7.8,2.6,16.1-1.3,18.6-8.8l9.1-27.1	C452.4,125.1,448.2,116.9,440.4,114.3z M65.4,471.8c1.5,22.6,20.9,40.2,44.5,40.2h228.2c23.5,0,43-17.6,44.5-40.2l19.7-302.6H45.7 L65.4,471.8z"/></svg></button>
+                                    </div>    
                                 </div>`;
     }
 
-    $("#btnTrash").hover(function() {
+    /*$("#btnTrash").hover(function() {
         $(this).html('<svg class="h-5 w-4" version="1.1" id="Camada_1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve"><path d="M417.2,111.1L306.9,95.3l-6.3-17.8c-2.7-7.7-9.7-13.4-18.1-14.6l-105.1-15c-8.4-1.2-16.6,2.2-21.4,8.9l-11,15.3L34.8,56.4 c-8.1-1.2-15.6,4.2-16.7,12l-4,28.3c-1.1,7.8,4.6,15.1,12.7,16.2l382.4,54.7c8.1,1.2,15.6-4.2,16.7-12l4-28.3	C431,119.5,425.3,112.2,417.2,111.1z M65.4,471.8c1.5,22.6,20.9,40.2,44.5,40.2h228.2c23.5,0,43-17.6,44.5-40.2l19.7-302.6H45.7	L65.4,471.8z"/></svg>');
     }, function() {
         $(this).html('<svg class="h-5 w-4"focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve"> <path d="M417.1,83.6H305.7L297,66.9c-3.8-7.3-11.5-11.9-20-11.9H170.9c-8.4,0-16.2,4.6-19.9,11.9l-8.7,16.7H30.9 C22.7,83.6,16,90,16,97.8v28.6c0,7.9,6.7,14.3,14.9,14.3h386.3c8.2,0,14.9-6.4,14.9-14.3V97.8C432,90,425.3,83.6,417.1,83.6z M65.4,471.8c1.5,22.6,20.9,40.2,44.5,40.2h228.2c23.5,0,43-17.6,44.5-40.2l19.7-302.6H45.7L65.4,471.8z"/> </svg>');
-    });
+    });*/
 </script>
 
 </html>
